@@ -4,7 +4,7 @@
     "type": "flarum-extension",
     "keywords": ["authentication"],
     "license": "GPL-3.0+",
-    "version": "v0.1.0-beta.8.7",
+    "version": "v0.1.0-beta.8.11",
     "authors": [
         {
             "name": "Prastowo Agung Widodo",
@@ -22,7 +22,7 @@
     },
     "extra": {
         "flarum-extension": {
-            "title": "AllNetwork Login",
+            "title": "AllNetwork",
             "icon": {
                 "name": "hashtag",
                 "backgroundColor": "#e7672e",

@@ -1,14 +1,12 @@
 'use strict';
 
-System.register('allnetwork/oauth/allnetwork/components/AllNetworkSettingsModal', ['flarum/components/SettingsModal', 'flarum/app'], function (_export, _context) {
+System.register('ircallnetwork/oauth/allnetwork/components/AllNetworkSettingsModal', ['flarum/components/SettingsModal'], function (_export, _context) {
   "use strict";
 
-  var SettingsModal, app, AllNetworkSettingsModal;
+  var SettingsModal, AllNetworkSettingsModal;
   return {
     setters: [function (_flarumComponentsSettingsModal) {
       SettingsModal = _flarumComponentsSettingsModal.default;
-    }, function (_flarumApp) {
-      app = _flarumApp.default;
     }],
     execute: function () {
       AllNetworkSettingsModal = function (_SettingsModal) {
@@ -27,7 +25,7 @@ System.register('allnetwork/oauth/allnetwork/components/AllNetworkSettingsModal'
         }, {
           key: 'title',
           value: function title() {
-            return app.translator.trans('allnetwork-oauth-allnetwork.admin.allnetwork_settings.title');
+            return app.translator.trans('ircallnetwork-oauth-allnetwork.admin.allnetwork_settings.title');
           }
         }, {
           key: 'form',
@@ -38,18 +36,18 @@ System.register('allnetwork/oauth/allnetwork/components/AllNetworkSettingsModal'
               m(
                 'label',
                 null,
-                app.translator.trans('allnetwork-oauth-allnetwork.admin.allnetwork_settings.client_id_label')
+                app.translator.trans('ircallnetwork-oauth-allnetwork.admin.allnetwork_settings.client_id_label')
               ),
-              m('input', { className: 'FormControl', bidi: this.setting('allnetwork-oauth-allnetwork.app_id') })
+              m('input', { className: 'FormControl', bidi: this.setting('ircallnetwork-oauth-allnetwork.app_id') })
             ), m(
               'div',
               { className: 'Form-group' },
               m(
                 'label',
                 null,
-                app.translator.trans('allnetwork-oauth-allnetwork.admin.allnetwork_settings.client_secret_label')
+                app.translator.trans('ircallnetwork-oauth-allnetwork.admin.allnetwork_settings.client_secret_label')
               ),
-              m('input', { className: 'FormControl', bidi: this.setting('allnetwork-oauth-allnetwork.app_secret') })
+              m('input', { className: 'FormControl', bidi: this.setting('ircallnetwork-oauth-allnetwork.app_secret') })
             )];
           }
         }]);
@@ -62,20 +60,20 @@ System.register('allnetwork/oauth/allnetwork/components/AllNetworkSettingsModal'
 });;
 'use strict';
 
-System.register('allnetwork/oauth/allnetwork/main', ['flarum/app', 'allnetwork/oauth/allnetwork/components/AllNetworkSettingsModal'], function (_export, _context) {
+System.register('ircallnetwork/oauth/allnetwork/main', ['flarum/app', 'ircallnetwork/oauth/allnetwork/components/AllNetworkSettingsModal'], function (_export, _context) {
   "use strict";
 
   var app, AllNetworkSettingsModal;
   return {
     setters: [function (_flarumApp) {
       app = _flarumApp.default;
-    }, function (_allnetworkOauthAllnetworkComponentsAllNetworkSettingsModal) {
-      AllNetworkSettingsModal = _allnetworkOauthAllnetworkComponentsAllNetworkSettingsModal.default;
+    }, function (_ircallnetworkOauthAllnetworkComponentsAllNetworkSettingsModal) {
+      AllNetworkSettingsModal = _ircallnetworkOauthAllnetworkComponentsAllNetworkSettingsModal.default;
     }],
     execute: function () {
 
-      app.initializers.add('allnetwork-oauth-allnetwork', function (app) {
-        app.extensionSettings['allnetwork-oauth-allnetwork'] = function () {
+      app.initializers.add('ircallnetwork-oauth-allnetwork', function () {
+        app.extensionSettings['ircallnetwork-oauth-allnetwork'] = function () {
           return app.modal.show(new AllNetworkSettingsModal());
         };
       });

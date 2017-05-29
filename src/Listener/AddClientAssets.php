@@ -3,7 +3,7 @@
 namespace AllNetwork\Auth\AllNetwork\Listener;
 
 use DirectoryIterator;
-use Flarum\Event\ConfigureClientView;
+use Flarum\Event\ConfigureWebApp;
 use Flarum\Event\ConfigureLocales;
 use Illuminate\Contracts\Events\Dispatcher;
 
@@ -14,28 +14,28 @@ class AddClientAssets
      */
     public function subscribe(Dispatcher $events)
     {
-        $events->listen(ConfigureClientView::class, [$this, 'addAssets']);
+        $events->listen(ConfigureWebApp::class, [$this, 'addAssets']);
         $events->listen(ConfigureLocales::class, [$this, 'addLocales']);
     }
 
     /**
      * @param ConfigureClientView $event
      */
-    public function addAssets(ConfigureClientView $event)
+    public function addAssets(ConfigureWebApp $event)
     {
         if ($event->isForum()) {
             $event->addAssets([
                 __DIR__.'/../../js/forum/dist/extension.js',
                 __DIR__.'/../../less/forum/extension.less'
             ]);
-            $event->addBootstrapper('allnetwork/oauth/allnetwork/main');
+            $event->addBootstrapper('ircallnetwork/oauth/allnetwork/main');
         }
 
         if ($event->isAdmin()) {
             $event->addAssets([
                 __DIR__.'/../../js/admin/dist/extension.js'
             ]);
-            $event->addBootstrapper('allnetwork/oauth/allnetwork/main');
+            $event->addBootstrapper('ircallnetwork/oauth/allnetwork/main');
         }
     }
 

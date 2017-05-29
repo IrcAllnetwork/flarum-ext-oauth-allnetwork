@@ -31,8 +31,8 @@ class AllNetworkAuthController extends AbstractOAuth2Controller
     protected function getProvider($redirectUri)
     {
         return new GenericProvider([
-            'clientId'        => $this->settings->get('allnetwork-oauth-allnetwork.app_id'),
-            'clientSecret'    => $this->settings->get('allnetwork-oauth-allnetwork.app_secret'),
+            'clientId'        => $this->settings->get('ircallnetwork-oauth-allnetwork.app_id'),
+            'clientSecret'    => $this->settings->get('ircallnetwork-oauth-allnetwork.app_secret'),
             'redirectUri'     => $redirectUri,
             //'approvalPrompt'  => 'force',
             //'hostedDomain'    => $this->settings->get('allnetwork-oauth-allnetwork.app_domain'),
