@@ -1,5 +1,5 @@
 {
-    "name": "IrcAllnetwork/flarum-ext-oauth-allnetwork",
+    "name": "ircallnetwork/flarum-ext-oauth-allnetwork",
     "description": "Allow users to log in with AllNetwork Account.",
     "type": "flarum-extension",
     "keywords": ["authentication"],
