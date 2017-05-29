@@ -14,14 +14,14 @@ class AddClientAssets
      */
     public function subscribe(Dispatcher $events)
     {
-        $events->listen(ConfigureWebApp::class, [$this, 'addAssets']);
+        $events->listen(ConfigureClientView::class, [$this, 'addAssets']);
         $events->listen(ConfigureLocales::class, [$this, 'addLocales']);
     }
 
     /**
      * @param ConfigureClientView $event
      */
-    public function addAssets(ConfigureWebApp $event)
+    public function addAssets(ConfigureClientView $event)
     {
         if ($event->isForum()) {
             $event->addAssets([
