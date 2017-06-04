@@ -37,9 +37,9 @@ class AllNetworkAuthController extends AbstractOAuth2Controller
             //'approvalPrompt'  => 'force',
             //'hostedDomain'    => $this->settings->get('allnetwork-oauth-allnetwork.app_domain'),
             'accessType'      => 'basic',
-            'urlAuthorize'            => 'https://account.ircallnetwork.ga/authorize',
-            'urlAccessToken'          => 'https://account.ircallnetwork.ga/token',
-            'urlResourceOwnerDetails' => 'https://account.ircallnetwork.ga/resource'
+            'urlAuthorize'            => 'https://account.allnetwork.org/authorize',
+            'urlAccessToken'          => 'https://account.allnetwork.org/token',
+            'urlResourceOwnerDetails' => 'https://account.allnetwork.org/resource'
         ]);
     }
 
